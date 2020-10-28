@@ -25,29 +25,21 @@ function setup() {
     randP = false;
     buttonP = false;
     check = false;
-
-    /*startButton = createButton("Start");
-    startButton.style('font-size', '30px');
-    startButton.position(width / 2 - 30, height - height / 4);
-    startButton.size(100, 60);
-    startButton.mousePressed(play);*/
 }
 
 function draw() {
   
-    // if (!buttonP) {
-    //    // pageInit();
-    // }
+    
       if (randP && !keyP) {
         fillGrid();
         write("You can add or remove live cells, as well as wipe the board. Press S to run the game.");
     } else if (keyP == false) {
         fillGrid();
-        write("Enter live cells. Press 'S' to randomise or 'w' to wipe the board. Press S to run the game.");
+        write("Enter live cells. Press 'S' to randomise or 'r' to wipe the board. Press S to run the game.");
         check = true;
     } else {
         fillGrid();
-        write("Game is running. Press S  again to pause. Press 'w' to wipe the board and start again.");
+        write("Game is running. Press S  again to pause. Press 'r' to wipe the board and start again.");
 
         newGrid = create2DArray();
 
