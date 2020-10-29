@@ -1,4 +1,5 @@
-var size = 20;
+var size = 10;
+let sizes = 30;
 var offsetY = 3;
 
 var w;
@@ -6,14 +7,13 @@ var grid;
 var newGrid;
 var keyP;
 var randP;
-var buttonP;
-var startButton;
+
 var check;
 
 function setup() {
-    createCanvas(600, 600 + offsetY);
-    w = floor(width / size);
-    grid = create2DArray();
+    createCanvas(600, 400 + offsetY);
+    w = floor(width/size);
+    grid = create2DArray(2);
 
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
@@ -25,23 +25,24 @@ function setup() {
     randP = false;
     buttonP = false;
     check = false;
+
+    
 }
 
 function draw() {
   
-    
       if (randP && !keyP) {
         fillGrid();
         write("You can add or remove live cells, as well as wipe the board. Press S to run the game.");
     } else if (keyP == false) {
         fillGrid();
-        write("Enter live cells. Press 'S' to randomise or 'r' to wipe the board. Press S to run the game.");
+        write("Enter live cells. Press 'S' to randomise or 'R' to wipe the board. Press S to run the game.");
         check = true;
     } else {
         fillGrid();
-        write("Game is running. Press S  again to pause. Press 'r' to wipe the board and start again.");
+        write("Game is running. Press S  again to pause. Press 'R' to wipe the board and start again.");
 
-        newGrid = create2DArray();
+        newGrid = create2DArray(2);
 
         for (var i = 0; i < size; i++) {
             for (var j = 0; j < size; j++) {
@@ -60,6 +61,7 @@ function draw() {
         }
 
         grid = newGrid;
+        
     }
 }
 
@@ -165,7 +167,8 @@ function write(words) {
     strokeWeight(2);
     stroke(255);
     fill(0);
-    textSize(19);
+    textSize(12);
     text(words, 1, 20);
 }
 
+ 
