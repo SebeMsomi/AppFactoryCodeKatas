@@ -29,11 +29,11 @@ describe('to run the game press S', function() {
 });
 
 test('keyIsPressed is false when no keys are pressed', function() {
-    // if (keyCode == 83 ) {
+    if (keyCode == 83 ) {
         if (!keyP) {
             keyP = true;
         } else if (keyP) {
             keyP = false;
         }
     }
-  );
+});
